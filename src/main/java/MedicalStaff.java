@@ -1,7 +1,9 @@
-public class MedicalStaff extends Employees{
+public interface MedicalStaff {
+
+    void drawBloood(Patient patient);
+
+    void treatingPatient(Patient patient);
 
 
-    public MedicalStaff(String name, int paySalary, int EmployeeNumber) {
-        super(name, paySalary, EmployeeNumber);
-    }
 }
+

@@ -1,21 +1,20 @@
 public class Employees {
+    private final int employeeNumber;
     public boolean sweeping;
     private int payRate;
     private int paySalary;
     private String name;
     private boolean paid;
     private String Employees;
+    private String specialty;
 
 
 
 
-
-
-
-    public Employees(String name, int paySalary, int EmployeeNumber ) {
+    public Employees(String name, int paySalary, int employeeNumber ) {
         this.name = name;
         this.paySalary = paySalary;
-        //this.specification = specification;
+        this.employeeNumber= employeeNumber;
     }
 
     public String getName() {
@@ -27,8 +26,9 @@ public class Employees {
     }
 
 
+
     public int getEmployeeNumber() {
-        return 0;
+        return employeeNumber;
     }
 
     public void recievepay() {
@@ -41,10 +41,10 @@ public class Employees {
         return "Employees " +
                 "name " + name + "|" +'\'' +
                 "sweeping " + sweeping +
-                "| paySalary |" + paySalary +
+                "| paySalary " + paySalary +
 
-                " |paid |" + paid +
-                '|';
+                " |paid " +  paid + "| " +
+                " Specialty " + specialty;
 
     }
 

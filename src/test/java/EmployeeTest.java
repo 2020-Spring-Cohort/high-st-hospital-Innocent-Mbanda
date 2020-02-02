@@ -10,17 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class EmployeeTest {
     private Employees underTest;
     private Doctors specifity;
+    private Doctors testNurse;
 
-
-    @BeforeEach
-    void setUpTest() {
-        underTest = new Employees("TESTNAME", 900000, 111) {
-            @Override
-            public String getName() {
-                return super.getName();
-            }
-        } ;
-    }
 
 
     @Test
@@ -55,14 +46,14 @@ public class EmployeeTest {
 
     @Test
     public void janitorIsNotSweeping() {
-        Janitor textjanitor = new Janitor("bob", 10000, 222);
+        Janitor textjanitor = new Janitor("bob", 40000, 20);
         textjanitor.setSweeping(true);
         assertThat(textjanitor.isSweeping());
 
     }
     @Test
     public void janitorIsSweeping() {
-        Janitor textjanitor = new Janitor("bob", 10000, 222);
+        Janitor textjanitor = new Janitor("bob", 40000, 20);
         textjanitor.setSweeping(false);
         assertThat(textjanitor.isSweeping());
     }
@@ -74,32 +65,32 @@ public class EmployeeTest {
 
         @Test
         public void doctorCanGetPaid () {
-            Doctors testDoctor = new Doctors("Billy", 90000, 128,"heart");
+            Doctors testDoctor = new Doctors("Dr Billy", 90000, 12,"heart");
             testDoctor.recievepay();
-            assertEquals(true, testDoctor.hasBeenPaid());
+            assertTrue(testDoctor.hasBeenPaid());
 
         }
 
         @Test
         public void doctorCanDrawBlood () {
-            Doctors testDoctor = new Doctors("james", 90000, 92,"heart");
-            Patient patient = new Patient();
+            Doctors testDoctor = new Doctors("Dr Billy ", 90000, 12,"heart");
+            Patient patient = new Patient("",20,10);
             testDoctor.drawBloood(patient);
-            assertEquals(15, patient.getBloodLevel());
+            assertEquals(11, patient.getBloodLevel());
         }
 
     @Test
     public void nursesCanDrawBlood () {
-        Doctors testDoctor = new Doctors("Fatuma", 50000, 62,"heart");
-        Patient patient = new Patient();
-        testDoctor.drawBloood(patient);
-        assertEquals(15, patient.getBloodLevel());
+        Nurses nurses = new Nurses("Jane", 50000, 62);
+        Patient patient = new Patient("",20,10);
+        testNurse.drawBloood(patient);
+        assertEquals(11, patient.getBloodLevel());
     }
 
     @Test
     public void doctShouldSpecification(){
         Doctors underTest = new Doctors("bob", 90000, 33,"heart");
-        String result =underTest.getSpecification();
+        String result =underTest.getSpecialty();
         assertEquals("heart",result);
     }
 

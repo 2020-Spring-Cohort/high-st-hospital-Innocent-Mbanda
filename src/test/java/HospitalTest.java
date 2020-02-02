@@ -23,7 +23,7 @@ public class HospitalTest {
     public void shouldBeAbleToHire(){
 
         assertEquals(1, underTest.getEmployeeList().size());
-        Doctors doc = new Doctors("bob", 900000,22,"heart" );
+        Doctors doc = new Doctors("Dr Billy", 900000,22,"heart" );
         underTest.hire(doc);
         assertEquals(2, underTest.getEmployeeList().size());
     }
