@@ -24,7 +24,7 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient:" + name + "bloodLevel=" + bloodLevel +", healthLevel=" + healthLevel;
+        return   "Patient:" +   name + "bloodLevel="  +   bloodLevel +",   healthLevel  =" + healthLevel;
     }
 
     public void haveBloodDrawn(int amountDrown) {
